@@ -1,0 +1,10 @@
+<% @list.movies.each do |movie| %>
+  <li><%= movie.title %></li>
+  <li><%= movie.overview %></li>
+  <li><%= image_path (movie.poster_url) %></li>
+  <li><%= movie.rating %></li>
+  <li><%= Bookmark.find_by(list: @list, movie: movie).comment %></li>
+<% end %>
+
+<%= link_to 'Add to the list', new_list_bookmark_path(@list.id), class: 'btn btn-primary' %>
+<%= link_to 'Back to lists', root_path, class: 'btn btn-primary' %>
