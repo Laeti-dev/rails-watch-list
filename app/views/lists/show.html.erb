@@ -14,13 +14,17 @@
 
   </div>
   <div class="row">
-    <% @list.movies.each do |movie| %>
+    <% @list.bookmarks.each do |bookmark| %>
       <div class="card col-3 mx-2 my-2" style="width: 18rem;">
-        <%= image_tag ("https://image.tmdb.org/t/p/w500/#{movie.poster_url}") %>
+        <% if bookmark.photo.attached? %>
+          <%= cl_image_tag bookmark.photo.key, width: 300, height: 300, crop: :fill %>
+        <% else %>
+          <%= image_tag ("https://image.tmdb.org/t/p/w500/#{bookmark.movie.poster_url}") %>
+        <% end %>
         <div class="card-body">
-          <h5 class="card-title"><%= movie.title %></h5>
-          <h6 class="card-subtitle mb-2 text-muted"><%= movie.rating %></h6>
-          <p class="card-text"><%= movie.overview %></p>
+          <h5 class="card-title"><%= bookmark.movie.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= bookmark.movie.rating %></h6>
+          <p class="card-text"><%= bookmark.movie.overview %></p>
         </div>
         <%# <%= link_to bookmark_path(@bookmark.id), method: "delete" do %>
           <%# <i class="fas fa-trash-alt"></i> %>

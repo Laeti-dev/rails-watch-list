@@ -9,6 +9,7 @@ class BookmarksController < ApplicationController
     @list = List.find(params[:list_id])
     @bookmark.list = @list # bookmark belongs to this list
     if @bookmark.save
+      @bookmark.photo.attach(bookmark_params[:photo])
       redirect_to list_path(@list)
     else
       render :new
@@ -25,6 +26,6 @@ class BookmarksController < ApplicationController
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id, :list_id)
+    params.require(:bookmark).permit(:comment, :movie_id, :list_id, :photo)
   end
 end

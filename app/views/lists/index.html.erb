@@ -6,7 +6,7 @@
   </div>
 </div>
 
-<div class="cards-block">
+<div class="cards-category">
   <% @lists.each do |list|  %>
     <div class="card-category text-center ">
       <%= link_to "#{list.name}", list_path(list) %>
