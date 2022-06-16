@@ -1,6 +1,10 @@
 require "application_system_test_case"
 
 class ListsTest < ApplicationSystemTestCase
+  setup do
+    @list = lists(:one)
+  end
+
   test "visiting the index" do
     #exercice
     visit root_url
@@ -9,7 +13,8 @@ class ListsTest < ApplicationSystemTestCase
   end
 
   test "create a new list" do
-    visit "/lists/new"
+    visit root_path
+    click_on "New List" # redirect to "/list/new"
 
     fill_in "list_name", with: "User"
 
@@ -20,5 +25,8 @@ class ListsTest < ApplicationSystemTestCase
     assert_text "User"
   end
 
-  test "update a list"
+  test "should show a bookmark" do
+    get root_url(@list)
+    assert_response :success
+  end
 end
