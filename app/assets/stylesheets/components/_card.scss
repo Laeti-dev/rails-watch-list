@@ -18,3 +18,11 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.user-cards {
+  height: 200px;
+
+  > a {
+    text-decoration: none;
+  }
+}
