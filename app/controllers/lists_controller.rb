@@ -2,7 +2,9 @@ class ListsController < ApplicationController
 before_action :find_list, only: [ :show, :destroy ]
 
 def destroy
+
   @list.destroy
+  raise
   flash[:success] = "Article deleted"
   redirect_to list_path(list), status: :see_other
 end
