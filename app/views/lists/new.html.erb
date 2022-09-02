@@ -1,6 +1,11 @@
 <div class="container-fluid">
-  <%= simple_form_for (@list) do |f| %>
-    <%= f.input :name, label: 'List name:', :input_html =>{:class => 'mx-2 my-2'} %>
-    <%= f.submit 'Create' %>
-  <% end %>
+  <div class="d-flex flex-column align-items-center">
+    <h1>Create a new list</h1>
+    <div class="form-layout my-24px">
+      <%= simple_form_for (@list) do |f| %>
+        <%= f.input :name, label: 'List name:', :input_html =>{:class => 'mx-2 my-2'} %>
+        <%= f.submit 'Create' %>
+      <% end %>
+    </div>
+  </div>
 </div>
