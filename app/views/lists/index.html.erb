@@ -10,9 +10,9 @@
     <% @lists.each do |list|  %>
       <div class="col mx-2 my-2 user-cards text-center justify-content-center" style="width = 18rem">
         <%= link_to "#{list.name}", list_path(list), class:"col h-100 card-category" %>
-        <div class="row text-center">
-          <%= link_to "Delete list", lists_path, method: :delete, data: {confirm: "Are you sure ?"} %>
-        </div>
+        <%= link_to "Delete list", list_path(list), method: :delete, data: {confirm: "Are you sure ?"} %>
+        <%# <div class="row text-center">
+        </div> %>
       </div>
     <% end %>
 </div>
