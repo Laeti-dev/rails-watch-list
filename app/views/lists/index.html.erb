@@ -7,11 +7,11 @@
 
   <div class="d-flex flex-row justify-content-center">
     <% @lists.each do |list|  %>
-      <div class="mx-2 my-2 user-cards text-center justify-content-center" style="width = 18rem">
+      <div class="mx-2 my-2 user-cards text-center justify-content-center" style="width:18rem, background-image:url(<% list.photo.attached? ? cl_image_path(list.photo.key) : @movies.sample.poster_url %>)">
         <%= link_to "#{list.name}", list_path(list), class:"h-100 card-category" %>
       </div>
     <% end %>
-    <div class="mx-2 my-2 user-cards text-center justify-content-center" style="width = 18rem">
+    <div class="mx-2 my-2 user-cards text-center justify-content-center" style="width:18rem, background-image:url(<%= @movies.sample.poster_url %>)">
         <%= link_to "Create a list", new_list_path(@list), class:"h-100 card-category" %>
     </div>
 </div>
