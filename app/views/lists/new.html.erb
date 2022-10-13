@@ -4,6 +4,7 @@
     <div class="form-layout my-24px">
       <%= simple_form_for (@list) do |f| %>
         <%= f.input :name, label: 'List name:', :input_html =>{:class => 'mx-2 my-2'} %>
+        <%= f.input :photo, as: :file %>
         <%= f.submit 'Create' %>
       <% end %>
     </div>
