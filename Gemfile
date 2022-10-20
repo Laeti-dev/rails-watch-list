@@ -34,7 +34,7 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec', '~> 3.10'
   gem 'factory_bot_rails', '~> 6.2'
-  gem 'capybara', '~> 3.37', '>= 3.37.1'
+
 end
 
 group :development do
@@ -50,6 +50,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '~> 3.37', '>= 3.37.1'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
@@ -58,6 +59,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', group: [ :development, :test ]
+gem 'rails-controller-testing', group: [ :test ]
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass', '~> 5.15.1'
